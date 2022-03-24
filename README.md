@@ -1,17 +1,21 @@
 # Jupyter Notebooks for Memgraph
 
-## Learn data science the easy way 🔮
+## 🔮 Learn data science the easy way
 
-Learn to use Memgraph quickly with the help of our Jupyter Notebooks. 
+Learn to use Memgraph quickly with the help of our Jupyter Notebooks.
 
-Check out the 
-**[getting started](/getting_started/getting_started.ipynb)** Notebook.
+The available notebooks are:
 
-## Join the [Memgraph App Challenge](https://memgraph.com/memgraph-app-challenge)
+- **[getting_started/getting_started.ipynb](/getting_started/getting_started.ipynb)**
+- **[gqlalchemy/query_builder.ipynb](/gqlalchemy/query_builder.ipynb)**
+- **[gqlalchemy/schema_definition.ipynb](/gqlalchemy/schema_definition.ipynb)**
+- **[twitter_network_analysis/twitter_network.ipynb](/twitter_network_analysis/twitter_network.ipynb)**
 
-Contribute to the world of graphs, and you might become the lucky winner! You
-can create an app, Python script, driver, implementation of a graph algorithm,
-or some other idea you think of. You just need to use Memgraph!
+## Export Notebook to markdown
 
-You can read more about it on the **[official
-website](https://memgraph.com/memgraph-app-challenge)**.
+A Jupyter Notebook can be exported in markdown format with the following
+command:
+
+```
+jupyter nbconvert my_notebook.ipynb --to markdown --output output.md
+```
