@@ -9,12 +9,19 @@ Through this tutorial, you will learn how to create a graph model from a dataset
 ![toy-story-preview](img/toy-story-preview.png)
 
 ## Requirements
-For this tutorial, you will need to install:
+The prerequisites for this workshop are:
 
 - [Jupyter](https://jupyter.org/install)
 - [Docker](https://docs.docker.com/get-docker/)
-- [GQLAlchemy 1.1.3](https://pypi.org/project/gqlalchemy/1.1.3/)
+- [CMake](https://cmake.org/install/)
+- [Memgraph Platform](https://memgraph.com/docs/memgraph/installation)
+
+Python libraries that are required are:
+- [GQLAlchemy](https://pypi.org/project/gqlalchemy/)
 - [Pandas](https://pypi.org/project/pandas/)
+
+All info about the versions can be found in the [requirements.txt](requirements.txt) file.
+
 
 ## Usage
 1. Clone the repository.
