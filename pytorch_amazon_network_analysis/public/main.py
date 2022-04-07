@@ -15,6 +15,7 @@ sia = nltk_sentiment.SentimentIntensityAnalyzer()
 stop_words = set(nltk_corpus.stopwords.words('english'))
 nlp = spacy.load("en_core_web_sm")
 
+
 class ProductReview:
     def __init__(self, product_id: str, title: str, user_id: str, review_score: float, review_time: int,
                  review_text: str, analysis_vector: List[float], profile_name: str):
@@ -111,7 +112,7 @@ def read_dataset(dataset_path: str):
                                                  review_text=review["review/text"],
                                                  analysis_vector=[float(e) for e in analysis_vector],
                                                  profile_name=review["review/profileName"]))
-        print(len(all_product_reviews))
+
     sorted(all_product_reviews, key=lambda x: x.review_time)
     all_product_reviews = list(filter(lambda x: x.review_score == 5.0, all_product_reviews))
     return all_product_reviews
@@ -148,13 +149,13 @@ def write_features(all_product_reviews: List[ProductReview]):
     np.save(edge_features_path, all_edge_features)
 
 
-def make_queries(all_product_reviews: List[ProductReview]):
+def make_queries(all_product_reviews: List[ProductReview], queries_file_path: str) -> None:
     queries = [product.make_queries() for product in all_product_reviews]
 
     final_queries = ["MATCH (n) DETACH DELETE n;"]
     final_queries.extend(queries)
 
-    with open('queries.cypherl', "w") as fh:
+    with open(queries_file_path, "w") as fh:
         fh.write("\n".join(final_queries))
 
 
@@ -175,11 +176,11 @@ def main():
     all_product_reviews = read_dataset(dataset_path=f"{dir_path}/../data/product_reviews.json")
 
     if args["save"] == "queries":
-        make_queries(all_product_reviews)
+        make_queries(all_product_reviews, queries_file_path=f"{dir_path}/../data/queries.cypherl")
     elif args["save"] == "npy":
         write_features(all_product_reviews)
     else:
-        make_queries(all_product_reviews)
+        make_queries(all_product_reviews, queries_file_path=f"{dir_path}/../data/queries.cypherl")
         write_features(all_product_reviews)
 
 
