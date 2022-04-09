@@ -186,6 +186,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# 'CALL tgn.set_params("self_supervised", 200, 2, "graph_attn", 100, 100, 20, 20, 100, 10, "identity", "last", "gru", 1) YIELD *;'
-#  'CALL tgn.set_mode("eval") YIELD *;'
