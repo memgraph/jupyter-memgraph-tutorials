@@ -19,10 +19,8 @@ nlp = spacy.load("en_core_web_sm")
 class ProductReview:
     def __init__(self, product_id: str, title: str, user_id: str, review_score: float, review_time: int,
                  review_text: str, analysis_vector: List[float], profile_name: str):
-        profile_name = profile_name.replace("'", "")
-        profile_name = profile_name.replace('"', "")
-        review_text = review_text.replace("'", "")
-        review_text = review_text.replace('"', "")
+        profile_name = escape_text(profile_name)
+        review_text = escape_text(profile_name)
         self.product_id = product_id
         self.title = title
         self.user_id = user_id
@@ -41,6 +39,11 @@ class ProductReview:
                f"MERGE (a)-[:REVIEWED {{review_text:'{self.review_text}', feature: {self.feature_edge}, " \
                f"review_time:{self.review_time}, review_score:{self.review_score}}}]->(b);"
 
+def escape_text(text:str)->str:
+    text = text.replace("'", "")
+    text = text.replace('"', "")
+    text = text.replace("\\", "")
+    return text
 
 def nlp_analysis(sentence: str):
     char_num = len(sentence)
@@ -96,7 +99,8 @@ def read_dataset(dataset_path: str):
         product_reviews_json = json.load(json_file)
 
     all_product_reviews = []
-    for review in product_reviews_json:
+    num_items = len(product_reviews_json)
+    for i, review in enumerate(product_reviews_json):
 
         if not all(name in review for name in ["product/productId", "product/title", "review/userId",
                                                "review/score", "review/time", "review/text", "review/profileName"]):

@@ -48,11 +48,11 @@ def write_to_file(json_string: str, file_name: str) -> None:
 def main():
     products_path = f"{dir_path}/../data/product_reviews.txt"
     print(f"[INFO] Converting objects from {products_path} to JSON string")
-    json_string = convert_reviews_json(f"{dir_path}/../data/product_reviews.txt", num_items=1000)
+    json_string = convert_reviews_json(f"{dir_path}/../data/product_reviews.txt", num_items=200)
     json_file_path = f"{dir_path}/../data/product_reviews.json"
     print(f"[INFO] Writing JSON to file {json_file_path}")
     write_to_file(json_string, json_file_path)
-    print(f"[INFO] Writing to file done! Now run public/main.py to create queries.")
+    print(f"[INFO] Writing to file done! Now run 'python3 public/main.py' to create queries.")
 
 
 
