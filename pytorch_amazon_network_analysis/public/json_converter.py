@@ -24,7 +24,7 @@ def convert_reviews_json(product_reviews_path: str, num_items: int) -> str:
             continue
         curr_obj.append(line.strip())
 
-    products_list  = []
+    products_list = []
     for i, obj in enumerate(grouped_objects):
         if i > num_items:
             break
@@ -35,7 +35,6 @@ def convert_reviews_json(product_reviews_path: str, num_items: int) -> str:
             groups = matches.groups()
             product[groups[0]] = groups[2]
         products_list.append(product)
-
 
     return json.dumps(products_list)
 
@@ -48,13 +47,11 @@ def write_to_file(json_string: str, file_name: str) -> None:
 def main():
     products_path = f"{dir_path}/../data/product_reviews.txt"
     print(f"[INFO] Converting objects from {products_path} to JSON string")
-    json_string = convert_reviews_json(f"{dir_path}/../data/product_reviews.txt", num_items=200)
+    json_string = convert_reviews_json(f"{dir_path}/../data/product_reviews.txt", num_items=1500)
     json_file_path = f"{dir_path}/../data/product_reviews.json"
     print(f"[INFO] Writing JSON to file {json_file_path}")
     write_to_file(json_string, json_file_path)
     print(f"[INFO] Writing to file done! Now run 'python3 public/main.py' to create queries.")
-
-
 
 
 if __name__ == "__main__":
