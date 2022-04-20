@@ -1,6 +1,6 @@
 #PyTorch x Amazon product reviews = :heart:
 
-This  **Jupyter Notebook** is aimed to make it easy to start **exploring and learning**
+Purpose of this  **Jupyter Notebook** is to make it easy to start **exploring and learning**
 about **Temporal Graph Networks** and **GNNs** as part of **Memgraph** and in general.
 
 
@@ -10,21 +10,26 @@ about **Temporal Graph Networks** and **GNNs** as part of **Memgraph** and in ge
  * [Amazon product data visualized](#amazon-product-data-visualized)
 
 ##Introduction
+This directory is an example of how to use **[Temporal Graph Networks](https://memgraph.com/docs/mage/query-modules/python/tgn)** for the
+link prediction on **[Amazon product graph](http://snap.stanford.edu/data/amazon/productGraph/)** dataset.
 
-This directory represents example of how to use **[Temporal graph networks]()** to train and evaluate **mean average precision**
-on **[Amazon product graph]()** dataset.
-
-
-If you want to read more about **GQLAlchemy**, go to the following **[link](https://memgraph.com/docs/gqlalchemy/)**.
-In a nutshell, **GQLAlchemy** is a fully open-source Python library that aims to be the go-to **Object Graph Mapper (OGM)** -- 
-a link between Graph Database objects and Python objects.
+In this Jupyter Notebook  we run **[Memgraph](https://memgraph.com/docs/memgraph/)** inside 
+**[Docker](https://www.docker.com/)** and use **[GQLAlchemy](https://memgraph.com/docs/gqlalchemy/)** as a link between 
+Graph Database objects and Python objects.
 
 
 ## What are GNNs
+**Graph neural networks** present a neural network models dealing with convolutions over graphs. It all started
+with **[Graph convolutional networks](https://arxiv.org/abs/1609.02907)** and idea of researchers to start exploring signals on graphs.
+Actually those ideas started way before with [spectral clustering](https://arxiv.org/pdf/0711.0189.pdf)), 
+but after several years of research and polishing signal exploration over graph, **graph neural networks** were born.
+Afterwards, **GNNs** expanded and started adapting **inductive** learning methods, which helped with development of
+**[temporal graph neural networks](https://towardsdatascience.com/temporal-graph-networks-ab8f327f2efe)**. 
 
 
 ## Amazon product data visualized
-Insert an from Memgraph Lab
+Here is an image from **Memgraph Lab** how our dataset **amazon product** looks:
+![Dataset](images/amazon-user-item-dataset.png)
 
 
 ## About Amazon product graph dataset
@@ -49,3 +54,7 @@ to send them to **Memgraph** using **GQLAlchemy**.
 
 
 ## Learning materials
+If you wish to start exploring about **TGN** you can read one of the following:
+* go to our [page](https://memgraph.com/docs/mage/query-modules/python/tgn) 
+* read a paper about **[TGN](https://arxiv.org/pdf/2006.10637.pdf)**
+* watch a video explanation about **[TGN](https://www.youtube.com/watch?v=0tw66aTfWaI&t=1s)**
