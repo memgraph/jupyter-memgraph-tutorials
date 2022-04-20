@@ -7,7 +7,10 @@ about **Temporal Graph Networks** and **GNNs** as part of **Memgraph** and in ge
 ## Table of contents
  * [Introduction to repo](#introduction)
  * [What are Graph Neural Networks and TGN](#what-are-gnns)
- * [Amazon product data visualized](#amazon-product-data-visualized)
+ * [Dataset visualized](#dataset-visualized)
+ * [About Amazon product dataset](#about-dataset)
+ * [Setup](#setup)
+ * [Learning materials](#learning-materials)
 
 ##Introduction
 This directory is an example of how to use **[Temporal Graph Networks](https://memgraph.com/docs/mage/query-modules/python/tgn)** for the
@@ -15,7 +18,8 @@ link prediction on **[Amazon product graph](http://snap.stanford.edu/data/amazon
 
 In this Jupyter Notebook  we run **[Memgraph](https://memgraph.com/docs/memgraph/)** inside 
 **[Docker](https://www.docker.com/)** and use **[GQLAlchemy](https://memgraph.com/docs/gqlalchemy/)** as a link between 
-Graph Database objects and Python objects.
+Graph Database objects and Python objects. To start you will need **Docker** and you will need to download 
+**Docker image** of **[Memgraph Platform](https://memgraph.com/download)**
 
 
 ## What are GNNs
@@ -24,15 +28,19 @@ with **[Graph convolutional networks](https://arxiv.org/abs/1609.02907)** and id
 Actually those ideas started way before with [spectral clustering](https://arxiv.org/pdf/0711.0189.pdf)), 
 but after several years of research and polishing signal exploration over graph, **graph neural networks** were born.
 Afterwards, **GNNs** expanded and started adapting **inductive** learning methods, which helped with development of
-**[temporal graph neural networks](https://towardsdatascience.com/temporal-graph-networks-ab8f327f2efe)**. 
+**[graph neural networks](https://towardsdatascience.com/temporal-graph-networks-ab8f327f2efe)** on dynamic graphs.
 
+Here is a schematic view of **TGN**:
+![TGN](images/tgn.png)
 
-## Amazon product data visualized
-Here is an image from **Memgraph Lab** how our dataset **amazon product** looks:
+## Dataset visualized
+We will start exploring **TGN** with our **amazon product** dataset looks. We have used **Memgraph Lab** to create
+this visualization. Memgraph Lab comes along with you **Memgraph Platform** and you can create your own styles **[here](https://memgraph.com/docs/memgraph-lab/)**.
+
 ![Dataset](images/amazon-user-item-dataset.png)
 
 
-## About Amazon product graph dataset
+## About dataset
 All the information about dataset, you can find on the following **[link](http://snap.stanford.edu/data/amazon/productGraph/)**.
 
 From the dataset description: 
@@ -46,12 +54,15 @@ and links (also viewed/also bought graphs).
 ```
 
 ## Setup
-1. Firstly, go to **[Stanford page](http://snap.stanford.edu/data/amazon/)** which contains Amazon product reviews.
+1. Firstly, go to **[Stanford page](http://snap.stanford.edu/data/amazon/)** which contains dataset of Amazon product reviews.
 2. Pick one of the datasets, download it, extract it and save it inside folder `pytorch_amazon_network_analysis/data/product_reviews.txt`
-3. Use our script `./public/main.py` to create cypher queries. Those cypher queries we will later use in Jupyter Notebook
-to send them to **Memgraph** using **GQLAlchemy**. 
-4. Next go to the **Jupyter Notebook** in `./amazon_network_analysis.ipynb` and start predicting edges in Amazon dataset.
+3. Use script we prepared in `./public/json_converter.py` to create a JSON file from your dataset. 
+4. Now use`./public/main.py` to create cypher queries. Now we can start exploring **TGN** as part of **Jupyter Notebook**.
+5. Open **Jupyter Lab** and run cells. **Memgraph** should be up and running in order to run successfully all the cells.
 
+## Results visualized
+In our experiments we used dataset of around 11500 edges. For that kind of dataset we don't need that many epochs to achieve pretty good results.
+![TGN](images/amazon-user-item-train-eval.png)
 
 ## Learning materials
 If you wish to start exploring about **TGN** you can read one of the following:
