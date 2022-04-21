@@ -6,7 +6,7 @@ This Jupyter notebook accompanies [Analyze Infrastructure Networks with Dynamic 
 
 In this tutorial, you will use Memgraph with:
 * [**Docker**](https://hub.docker.com/r/memgraph/memgraph-platform), 
-* [**gqlalchemy**](https://pypi.org/project/gqlalchemy/),
+* [**GQLAlchemy**](https://pypi.org/project/gqlalchemy/),
 * and [**Jupyter Notebook**](https://jupyter.org/install) installed.
 
 ## Data
