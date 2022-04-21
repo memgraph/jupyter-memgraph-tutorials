@@ -25,13 +25,25 @@ Graph Database objects and Python objects. To start you will need **Docker** and
 ## What are GNNs
 **Graph neural networks** present a neural network models dealing with convolutions over graphs. It all started
 with **[Graph convolutional networks](https://arxiv.org/abs/1609.02907)** and idea of researchers to start exploring signals on graphs.
-Actually those ideas started way before with [spectral clustering](https://arxiv.org/pdf/0711.0189.pdf)), 
+Actually those ideas started way before with [spectral clustering](https://arxiv.org/pdf/0711.0189.pdf), 
 but after several years of research and polishing signal exploration over graph, **graph neural networks** were born.
 Afterwards, **GNNs** expanded and started adapting **inductive** learning methods, which helped with development of
-**[graph neural networks](https://towardsdatascience.com/temporal-graph-networks-ab8f327f2efe)** on dynamic graphs.
+**[graph neural networks](https://towardsdatascience.com/temporal-graph-networks-ab8f327f2efe)** on dynamic graphs. This
+specific model is called **Temporal Graph Networks(TGN)**.
 
-Here is a schematic view of **TGN**:
+Here is a schematic view of how **TGN** works:
 ![TGN](images/tgn.png)
+
+As you can see proces works with batch processing. In this image we presented how edge prediction task works
+with **interaction events** as main building block of **TGN**. Interaction event is another name for edge creation
+between two nodes. After batch is full we extract features from nodes and edges. From those features and old memory we 
+create **message** for each of **interaction events**. Actually from one interaction event we create **two** messages, one
+for *source node* and other for *destination node* of the edge. In step 3 we aggregate messages for each node. In batch 
+of messages we have some old messages from nodes that already had interaction events in graph. In our example we use
+message aggregator that is in research paper called **last**. We only take **last** message and it represents aggregated messages.
+Other options include **mean** or **LSTM**. Now, memory needs to be updated from new aggregated messages and old memory.
+Final step includes embedding calculation from updated memory and *node and edge* features which represent initial embedding
+of nodes.
 
 ## Dataset visualized
 We will start exploring **TGN** with our **amazon product** dataset looks. We have used **Memgraph Lab** to create
