@@ -10,6 +10,7 @@ The available notebooks are:
 - **[gqlalchemy/query_builder.ipynb](/gqlalchemy/query_builder.ipynb)**
 - **[gqlalchemy/schema_definition.ipynb](/gqlalchemy/schema_definition.ipynb)**
 - **[twitter_network_analysis/twitter_network.ipynb](/twitter_network_analysis/twitter_network.ipynb)**
+- **[internet_infrastructure_analysis/dynamic_betweenness_centrality.ipynb](/internet_infrastructure_analysis/dynamic_betweenness_centrality.ipynb)**
 - **[gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb](/gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb)**
 
 ## Export Notebook to markdown
