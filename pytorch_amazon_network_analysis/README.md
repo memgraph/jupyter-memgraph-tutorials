@@ -34,16 +34,16 @@ specific model is called **Temporal Graph Networks(TGN)**.
 Here is a schematic view of how **TGN** works:
 ![TGN](images/tgn.png)
 
-As you can see proces works with batch processing. In this image we presented how edge prediction task works
-with **interaction events** as main building block of **TGN**. Interaction event is another name for edge creation
-between two nodes. After batch is full we extract features from nodes and edges. From those features and old memory we 
-create **message** for each of **interaction events**. Actually from one interaction event we create **two** messages, one
-for *source node* and other for *destination node* of the edge. In step 3 we aggregate messages for each node. In batch 
-of messages we have some old messages from nodes that already had interaction events in graph. In our example we use
-message aggregator that is in research paper called **last**. We only take **last** message and it represents aggregated messages.
+As you can see process works with batch processing. In this image, we presented how the edge prediction task works
+with **interaction events** as the main building block of **TGN**. Interaction event is another name for edge creation
+between two nodes. After a batch is full we extract features from nodes and edges. From those features and old memory, we 
+create a **message** for each of **interaction events**. Actually, from one interaction event, we create **two** messages, one
+for *source node* and the other for *destination node* of the edge. In step 3 we aggregate messages for each node. In a batch 
+of messages, we have some old messages from nodes that already had interaction events in a graph. In our example, we use
+a message aggregator that is in the research paper called **last**. We only take **last** message and it represents aggregated messages.
 Other options include **mean** or **LSTM**. Now, memory needs to be updated from new aggregated messages and old memory.
-Final step includes embedding calculation from updated memory and *node and edge* features which represent initial embedding
-of nodes.
+The final step includes embedding calculation from updated memory and *node and edge* features which represent the initial embedding
+of nodes. You can learn more about how **TGN** works from [learning materials](#learning-materials) down below.
 
 ## Dataset visualized
 We will start exploring **TGN** with our **amazon product** dataset looks. We have used **Memgraph Lab** to create
