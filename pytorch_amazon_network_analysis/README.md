@@ -43,7 +43,13 @@ of messages, we have some old messages from nodes that already had interaction e
 a message aggregator that is in the research paper called **last**. We only take **last** message and it represents aggregated messages.
 Other options include **mean** or **LSTM**. Now, memory needs to be updated from new aggregated messages and old memory.
 The final step includes embedding calculation from updated memory and *node and edge* features which represent the initial embedding
-of nodes. You can learn more about how **TGN** works from [learning materials](#learning-materials) down below.
+of nodes. This part of embedding calculation is not an easy task since for every node you need to design different 
+**computation graph** for every node since it depends on when did the mentioned node had last interaction, since it cannot
+see nodes from feature. To check how we implemented it, jump to [our GitHub site](https://github.com/memgraph/mage).
+
+![Dataset](images/temporal-computation-graph.png)
+
+You can learn more about how **TGN** works from [learning materials](#learning-materials) down below.
 
 ## Dataset visualized
 We will start exploring **TGN** with our **amazon product** dataset looks. We have used **Memgraph Lab** to create
