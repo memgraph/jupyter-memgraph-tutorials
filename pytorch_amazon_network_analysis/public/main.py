@@ -123,7 +123,7 @@ def read_dataset(dataset_path: str):
 
 
 def write_features(all_product_reviews: List[ProductReview]):
-    # one row of graph data contains source, destination, review_time and edge_index
+    # each row of graph data contains source, destination, review_time and edge_index
     graph_data_len = 4
     graph_data = np.empty((0, 4), dtype=int)
     all_edge_features = np.empty((0, 20), dtype=float)
