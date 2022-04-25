@@ -34,7 +34,7 @@ Here is a schematic view of how **TGN** works:
 ![TGN](images/tgn.png)
 
 As you can see, the process uses batch processing. In this image, we presented how the edge prediction task works
-with **interaction events** as the main building block of **TGN**. Interaction event is an another name for the creation of an edge```
+with **interaction events** as the main building block of **TGN**. Interaction event is an another name for the creation of an edge
 between two nodes. After a batch is full, we extract features from nodes and edges. From those features and old memory, we 
 create **messages** for each of **interaction events**. Note that each interaction event generates **two** messages, one
 for the *source node* and the other for the *destination node* of the edge. In step 3, messages fare aggregated for each node. In a batch 
