@@ -1,5 +1,5 @@
 """
- Purpose of this file is to create product_reviews.json file which we use to create cypher queries.
+ The purpose of this file is to create the product_reviews.json file, which we use to create Cypher queries.
  If you want to use some test some other cypher queries, different from ones we prepared, go to the
  http://snap.stanford.edu/data/amazon/, download, unzip and save your dataset in `data` folder. Afterwards,
  you can process it with json_converter.py

@@ -11,6 +11,9 @@ The available notebooks are:
 - **[gqlalchemy/schema_definition.ipynb](/gqlalchemy/schema_definition.ipynb)**
 - **[twitter_network_analysis/twitter_network.ipynb](/twitter_network_analysis/twitter_network.ipynb)**
 - **[pytorch_amazon_network_analysis/amazon_network_analysis.ipynb](/pytorch_amazon_network_analysis/amazon_network_analysis.ipynb)**
+- **[internet_infrastructure_analysis/dynamic_betweenness_centrality.ipynb](/internet_infrastructure_analysis/dynamic_betweenness_centrality.ipynb)**
+- **[gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb](/gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb)**
+
 ## Export Notebook to markdown
 
 A Jupyter Notebook can be exported in markdown format with the following
