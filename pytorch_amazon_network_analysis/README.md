@@ -40,11 +40,9 @@ create **messages** for each of **interaction events**. Note that each interacti
 for the *source node* and the other for the *destination node* of the edge. In step 3, messages fare aggregated for each node. In a batch 
 of messages, there are some old messages from nodes that already had interaction events in a graph. In our example, we use
 a message aggregator called **last** in research paper. It works by only taking the **last** message to represent the  message aggregation.
-Other options include **mean** or **LSTM**. Now, memory needs to be updated from new aggregated messages and old memory.
-The final step includes embedding calculation from updated memory and *node and edge* features which represent the initial embedding
-of nodes. This part of embedding calculation is not an easy task since for every node you need to design different 
-**computation graph** for every node since it depends on when did the mentioned node had last interaction, since it cannot
-see nodes from feature. To check how we implemented it, jump to [our GitHub site](https://github.com/memgraph/mage).
+The other options are **mean** or **LSTM**. Now, the memory needs to be updated from new aggregated messages and the old memory.
+The final step includes the calculation of embeddings from the updated memory and *node and edge* features which represent the initial node embedding. This part of the embedding calculation is not simple - for every node, a new 
+**computation graph** needs to be made because it depends on when the said node last had an interaction since it doesn't have access to nodes from the future. To check how we implemented it, jump to [our GitHub site](https://github.com/memgraph/mage).
 
 ![Dataset](images/temporal-computation-graph.png)
 
