@@ -1,6 +1,6 @@
 #PyTorch x Amazon product reviews = :heart:
 
-Purpose of this  **Jupyter Notebook** is to make it easy to start **exploring and learning**
+The purpose of this **Jupyter Notebook** is to make it easy to start **exploring and learning**
 about **Temporal Graph Networks** and **GNNs** as part of **Memgraph** and in general.
 
 
