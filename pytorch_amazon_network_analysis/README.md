@@ -27,9 +27,8 @@ graph database objects and Python objects. To start, you will need **Docker** an
 with **[Graph convolutional networks](https://arxiv.org/abs/1609.02907)** and scientists' idea to start exploring signals on graphs.
 Those ideas first yielded [spectral clustering](https://arxiv.org/pdf/0711.0189.pdf), 
 but after several years of researching signals in graphs **graph neural networks** were born.
-Afterwards, **GNNs** expanded and started adapting **inductive** learning methods, which helped with development of
-**[graph neural networks](https://towardsdatascience.com/temporal-graph-networks-ab8f327f2efe)** on dynamic graphs. This
-specific model is called **Temporal Graph Networks(TGN)**.
+Afterwards, **GNNs** expanded and started adapting **inductive** learning methods, which helped with their development on dynamic graphs - 
+**[Temporal Graph Networks (TGN)](https://towardsdatascience.com/temporal-graph-networks-ab8f327f2efe)**.
 
 Here is a schematic view of how **TGN** works:
 ![TGN](images/tgn.png)
