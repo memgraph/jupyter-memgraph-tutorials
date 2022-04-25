@@ -79,6 +79,23 @@ and links (also viewed/also bought graphs).
 In our experiments we used a dataset of around 11500 edges. For that kind of a dataset we don't need that many epochs to achieve pretty good results.
 ![TGN](images/amazon-user-item-train-eval.png)
 
+Afterwards we can predict new edges with following query:
+```
+MATCH (n:User)
+        WITH n
+        LIMIT 1
+        MATCH (m:Item)
+        OPTIONAL MATCH (n)-[r]->(m)
+        WHERE r is null
+        CALL tgn.predict_link_score(n,m) YIELD prediction
+        WITH n,m, prediction
+        WHERE prediction>0.7
+        MERGE (n)-[:PREDICTED_REVIEW {likelihood:prediction}]->(m);
+```
+
+And we get the following predicted edges.
+![prediction](images/tgn-prediction.png)
+
 ## Learning materials
 If you wish to start exploring about **TGN**, you can read one of the following:
 * go to our [page](https://memgraph.com/docs/mage/query-modules/python/tgn) 
