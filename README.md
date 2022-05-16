@@ -13,6 +13,7 @@ The available notebooks are:
 - **[pytorch_amazon_network_analysis/amazon_network_analysis.ipynb](/pytorch_amazon_network_analysis/amazon_network_analysis.ipynb)**
 - **[internet_infrastructure_analysis/dynamic_betweenness_centrality.ipynb](/internet_infrastructure_analysis/dynamic_betweenness_centrality.ipynb)**
 - **[gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb](/gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb)**
+- **[cugraph-analytics/cugraph-analytics.ipynb](/cugraph-analytics/cugraph-analyticsipynb)**
 
 ## Export Notebook to markdown
 
