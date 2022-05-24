@@ -14,6 +14,8 @@ The available notebooks are:
 - **[internet_infrastructure_analysis/dynamic_betweenness_centrality.ipynb](/internet_infrastructure_analysis/dynamic_betweenness_centrality.ipynb)**
 - **[gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb](/gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb)**
 - **[cugraph-analytics/cugraph-analytics.ipynb](/cugraph-analytics/cugraph-analyticsipynb)**
+- **[got-analysis/game-of-graphs.ipynb](/got-analysis/game-of-graphs.ipynb)**
+
 
 ## Export Notebook to markdown
 
