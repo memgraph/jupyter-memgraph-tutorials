@@ -13,12 +13,13 @@ All of the algorithms above are powered by **[Nvidia cuGraph](https://www.nvidia
 ## Prerequisites 
 
 To follow the tutorial, please install:
-- [Docker](https://docs.docker.com/get-docker/) - needed to run `mage-cugraph` image
+- [Docker](https://docs.docker.com/get-docker/) - needed to run `memgraph/memgraph-mage:1.3-cugraph-22.02-cuda-11.5` image we use in jupyter notebook
 - [Jupyter](https://jupyter.org/install) - using jupyter-notebook you can write  `CSV` importing and graph analytics in one file
 - [GQLAlchemy](https://pypi.org/project/gqlalchemy/) - used to connect Memgraph with Python
 - [Memgraph Lab](https://memgraph.com/lab) - a GUI tool we use to visualize graphs
 
-There are additional instructions in `cugraph_analytics.ipynb` notebook.
+There are additional instructions in `cugraph_analytics.ipynb` notebook. Note, all `cuGraph` Docker images are available [here](https://hub.docker.com/r/memgraph/memgraph-mage/tags?page=1&name=cugraph). Depending on drivers on your machine, be sure to Download correct image. 
+Check out compatibility between drivers and CUDA on official [NVIDIA page](https://docs.nvidia.com/deploy/cuda-compatibility/index.html).
 
 ## Data
 
