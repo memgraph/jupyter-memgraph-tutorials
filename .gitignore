@@ -19,3 +19,4 @@ ipython_config.py
 .idea/*
 pytorch_amazon_network_analysis/data/*
 !pytorch_amazon_network_analysis/data/.gitkeep
+memgraph-graphRAG/.env
