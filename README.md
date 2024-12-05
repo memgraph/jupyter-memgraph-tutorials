@@ -15,6 +15,7 @@ The available notebooks are:
 - **[gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb](/gqlalchemy-workshop/workshop/gqlalchemy-workshop.ipynb)**
 - **[cugraph-analytics/cugraph-analytics.ipynb](/cugraph-analytics/cugraph-analyticsipynb)**
 - **[got-analysis/game-of-graphs.ipynb](/got-analysis/game-of-graphs.ipynb)**
+- **[vector_search_example/vector_search_example.ipynb](/vector_search_example/vector_search_example.ipynb)**
 
 
 ## Export Notebook to markdown
